@@ -1,4 +1,3 @@
-typescript
 // D:/Arquivos/PROJETOS/00 - GitHub/00-Arsenal-Tools/2025-12-17-Arsenal_Tools_AI.Studio/services/supabaseClient.ts
 
 // Linha 4 (original): CORREÇÃO AQUI - Caminho ajustado para './types' para '../types'
