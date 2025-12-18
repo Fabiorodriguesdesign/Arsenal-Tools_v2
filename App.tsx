@@ -1,9 +1,9 @@
-
 import React, { Suspense, lazy, useEffect } from 'react';
 import HomePage from './components/HomePage';
 import ModalManager from './components/ModalManager';
 import { useSiteContent } from './contexts/SiteContentContext';
 import { useAuth } from './contexts/AuthContext';
+import { useModal } from './contexts/ModalContext';
 import { Loading } from './components/ui/Loading';
 import { BioLinkCategory } from './types';
 import { useRoute } from './hooks/useRoute';
@@ -14,7 +14,7 @@ import GlobalSearch from './components/GlobalSearch';
 import ZenModeFloat from './components/ZenModeFloat';
 import FeedbackWidget from './components/FeedbackWidget';
 import WhatsAppFloat from './components/WhatsAppFloat';
-import AppErrorBoundary from './components/AppErrorBoundary'; // New import
+import AppErrorBoundary from './components/AppErrorBoundary';
 
 // Lazy Load Micro-Apps and Admin
 const AdminDashboard = lazy(() => import('./components/AdminDashboard'));
@@ -28,17 +28,18 @@ const DashboardPage = lazy(() => import('./components/DashboardPage'));
 const App: React.FC = () => {
   const { siteContent } = useSiteContent();
   const { isLoggedIn, isLoading: isAuthLoading } = useAuth();
+  const { openModal } = useModal();
   
   // Custom Hooks
   const { currentHash } = useRoute();
   useSimpleAnalytics();
   const { addRecentTool } = useRecentTools();
 
-  // Rastreamento de Histórico e Redirecionamento Admin
+  // Gerenciamento de Acesso Admin e Histórico
   useEffect(() => {
-    // Admin Check
+    // Admin Check: Se tentar entrar em /admindash sem estar logado, abre o login
     if (currentHash.startsWith('#/admindash') && !isAuthLoading && !isLoggedIn) {
-        window.location.hash = '';
+        openModal('adminLogin');
         return;
     }
 
@@ -55,11 +56,10 @@ const App: React.FC = () => {
             }
         }
     } else if (currentHash.startsWith('#/app/shopee-finder')) {
-         // Shopee é um app único, tratamos como ferramenta
          addRecentTool('shopee-finder', 'shopee-finder');
     }
 
-  }, [currentHash, isAuthLoading, isLoggedIn, addRecentTool]);
+  }, [currentHash, isAuthLoading, isLoggedIn, addRecentTool, openModal]);
 
   // Roteamento
   const renderContent = () => {
@@ -124,7 +124,6 @@ const App: React.FC = () => {
         );
     }
     
-    // Nova Rota para Shopee Finder
     if (currentHash.startsWith('#/app/shopee-finder')) {
         return (
             <AppErrorBoundary appName="Shopee Finder">
@@ -135,7 +134,6 @@ const App: React.FC = () => {
         );
     }
 
-    // Nova Rota para Store
     if (currentHash.startsWith('#/store')) {
         return (
             <AppErrorBoundary appName="Loja">
@@ -146,7 +144,6 @@ const App: React.FC = () => {
         );
     }
 
-    // Nova Rota para Sobre
     if (currentHash.startsWith('#/sobre')) {
         return (
             <AppErrorBoundary appName="Sobre">
@@ -157,7 +154,6 @@ const App: React.FC = () => {
         );
     }
 
-    // Nova Rota para Dashboard Pessoal
     if (currentHash.startsWith('#/dashboard')) {
         return (
             <AppErrorBoundary appName="Dashboard Pessoal">

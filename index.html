@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%3crect width='100' height='100' rx='20' fill='%23e52920'/%3e%3ctext x='50%25' y='50%25' dy='.1em' dominant-baseline='middle' text-anchor='middle' font-family='Inter, sans-serif' font-weight='800' font-size='60' fill='white'%3eF%3c/text%3e%3c/svg%3e" />
+    <!-- Favicon Oficial Arsenal Tools -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 444.3 421.7'%3e%3cpath fill='%23e52920' d='M424 378.4l-63.1-111.6c-3.4-6-9.8-9.7-16.7-9.7h-100v32h-50.2v-32h-98.9c-6.9 0-13.3 3.7-16.7 9.7l-63.1 111.6c-7.2 12.8 2 28.6 16.7 28.6h100.3c6.9 0 13.3-3.7 16.7-9.7l37.4-66.1c3.4-6 9.7-9.7 16.6-9.7h33.1c6.9 0 13.3 3.6 16.7 9.7l37.4 66.2c3.4 6 9.8 9.7 16.7 9.7h100.3c14.7 0 23.9-15.8 16.7-28.6zm-305.5-142.4h75.5v-23.9c-13.4-8.4-22.3-23.2-22.3-40.2 0-26.2 21.2-47.4 47.4-47.4s47.4 21.2 47.4 47.4-8.9 31.8-22.3 40.2v23.9h75.5c10.2 0 16.7-10.8 11.9-19.8L232.4 31.2c-5.1-9.5-18.7-9.6-23.9-.1L106.6 216.2c-4.9 9 1.5 19.9 11.9 19.8z'/%3e%3c/svg%3e" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arsenal Tools</title>
     <link rel="canonical" href="https://arsenal-tools.com/" />
@@ -14,11 +14,15 @@
     <meta name="author" content="Fabio Rodrigues" />
     <meta name="theme-color" content="#e52920" />
 
-    <!-- Open Graph Meta Tags (for Facebook, WhatsApp, etc.) -->
+    <!-- Open Graph Meta Tags (Redes Sociais e WhatsApp) -->
     <meta property="og:site_name" content="Arsenal Tools" />
-    <meta property="og:title" content="Arsenal Tools" />
-    <meta property="og:description" content="Soluções Freemium e Premium para otimizar seu fluxo de trabalho e impulsionar seus resultados." />
+    <meta property="og:title" content="Arsenal Tools | Ferramentas Digitais" />
+    <meta property="og:description" content="Soluções gratuitas e premium para otimizar seu fluxo de trabalho criativo." />
     <meta property="og:image" content="https://i.imgur.com/MaoShGg.jpeg" />
+    <meta property="og:image:secure_url" content="https://i.imgur.com/MaoShGg.jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="800" />
     <meta property="og:url" content="https://arsenal-tools.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
@@ -26,9 +30,16 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Arsenal Tools" />
-    <meta name="twitter:description" content="Soluções Freemium e Premium para otimizar seu fluxo de trabalho e impulsionar seus resultados." />
+    <meta name="twitter:description" content="Otimize seu fluxo de trabalho com as melhores ferramentas digitais." />
     <meta name="twitter:image" content="https://i.imgur.com/MaoShGg.jpeg" />
     
+    <!-- Redirecionamento amigável para Admin (Catch-all) -->
+    <script>
+      if (window.location.pathname === '/admindash') {
+          window.location.replace('/#/admindash');
+      }
+    </script>
+
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -78,19 +89,14 @@
               'gradient-accent': 'var(--gradient-accent)',
             },
             colors: {
-              // Dynamic CSS Variables for Multi-Theme support
               primary: 'var(--color-primary)',
               'primary-dark': 'var(--color-primary-dark)',
-              
               secondary: 'var(--color-secondary)',
               danger: 'var(--color-danger)',
               warning: 'var(--color-warning)',
               success: 'var(--color-success)',
-              
               'accent-blue': 'var(--color-accent-blue)',
               'accent-purple': 'var(--color-accent-purple)',
-
-              // Specific UI Tokens
               'light-bg': 'var(--color-light-bg)',
               'light-card': 'var(--color-light-card)',
               'light-text': 'var(--color-light-text)',
@@ -99,7 +105,6 @@
               'light-input': 'var(--color-light-input)',
               'light-accent': 'var(--color-light-accent)',
               'light-accent-text': 'var(--color-light-accent-text)',
-              
               'dark-bg': 'var(--color-dark-bg)',
               'dark-card': 'var(--color-dark-card)',
               'dark-text': 'var(--color-dark-text)',
@@ -114,12 +119,10 @@
       }
     </script>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Import Map -->
     <script type="importmap">
 {
   "imports": {
