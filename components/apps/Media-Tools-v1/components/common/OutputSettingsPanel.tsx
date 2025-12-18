@@ -31,13 +31,21 @@ const OutputSettingsPanel: React.FC<OutputSettingsPanelProps> = ({
             <div className="grid grid-cols-2 gap-2 mb-3">
                 <button
                     onClick={() => setRenameMode('smart')}
-                    className={`px-2 py-2 rounded text-xs font-bold transition-colors border ${renameMode === 'smart' ? 'bg-primary text-white border-primary' : 'bg-light-bg dark:bg-zinc-800 text-light-muted dark:text-zinc-400 border-light-border dark:border-zinc-700 hover:border-primary/50'}`}
+                    className={`px-2 py-2 rounded text-xs font-bold transition-colors border ${
+                        renameMode === 'smart' 
+                        ? 'bg-primary text-white border-primary shadow-sm' 
+                        : 'bg-light-bg dark:bg-zinc-800 text-light-muted dark:text-zinc-400 border-light-border dark:border-zinc-700 hover:border-primary/50'
+                    }`}
                 >
                     Modo Inteligente (SEO)
                 </button>
                 <button
                     onClick={() => setRenameMode('base')}
-                    className={`px-2 py-2 rounded text-xs font-bold transition-colors border ${renameMode === 'base' ? 'bg-primary text-white border-primary' : 'bg-light-bg dark:bg-zinc-800 text-light-muted dark:text-zinc-400 border-light-border dark:border-zinc-700 hover:border-primary/50'}`}
+                    className={`px-2 py-2 rounded text-xs font-bold transition-colors border ${
+                        renameMode === 'base' 
+                        ? 'bg-primary text-white border-primary shadow-sm' 
+                        : 'bg-light-bg dark:bg-zinc-800 text-light-muted dark:text-zinc-400 border-light-border dark:border-zinc-700 hover:border-primary/50'
+                    }`}
                 >
                     Modo Sequencial
                 </button>

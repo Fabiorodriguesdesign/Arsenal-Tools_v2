@@ -1,36 +1,46 @@
-// D:/Arquivos/PROJETOS/00 - GitHub/00-Arsenal-Tools/2025-12-17-Arsenal_Tools_AI.Studio/services/supabaseClient.ts
+import { IAppSupabaseClient } from '../types';
 
-// Linha 4 (original): CORREÇÃO AQUI - Caminho ajustado para './types' para '../types'
-import { IAppSupabaseClient } from '../types'; 
-
-// Define uma interface comum para nosso cliente (real ou mock)
-// para ajudar na segurança de tipos em toda a aplicação.
-// A interface IAppSupabaseClient foi movida para types.ts para quebrar uma dependência circular.
-// entre supabaseClient.ts e services/supabaseMock.ts. Isso garante que
-// o tipo de cliente Supabase seja resolvido corretamente em todo o aplicativo.
-
+/**
+ * Cria o cliente do Supabase dinamicamente.
+ * Prioriza o cliente real se as chaves estiverem presentes no ambiente.
+ */
 const createDynamicClient = async (): Promise<IAppSupabaseClient> => {
-    // Acessa variáveis de ambiente de forma segura, compatível com Vite (`import.meta.env`)
-    // e outros ambientes como o AI Studio (`process.env`).
+    // Detecta o ambiente (Vite utiliza import.meta.env, Node/outros utilizam process.env)
     // @ts-ignore
     const env = (typeof import.meta !== 'undefined' && import.meta.env) || (typeof process !== 'undefined' && process.env);
 
-    const supabaseUrl = env?.VITE_SUPABASE_URL;
-    const supabaseAnonKey = env?.VITE_SUPABASE_ANON_KEY;
+    // Tenta capturar as chaves com e sem o prefixo VITE_ para máxima compatibilidade
+    const supabaseUrl = env?.VITE_SUPABASE_URL || env?.SUPABASE_URL;
+    const supabaseAnonKey = env?.VITE_SUPABASE_ANON_KEY || env?.SUPABASE_ANON_KEY;
 
-    if (supabaseUrl && supabaseAnonKey) {
-        const { createClient } = await import('@supabase/supabase-js');
-        const realClient = createClient(supabaseUrl, supabaseAnonKey);
-        // Adiciona a propriedade isStub para consistência
-        (realClient as IAppSupabaseClient).isStub = false;
-        return realClient as IAppSupabaseClient;
-    } else {
-        // Linha 24 (original): Já corrigido anteriormente
-        const { supabaseMockClient } = await import('./supabaseMock');
-        return supabaseMockClient;
+    // Verifica se as chaves são válidas (não vazias e não a string "undefined")
+    const hasRealKeys = supabaseUrl && 
+                        supabaseAnonKey && 
+                        supabaseUrl !== 'undefined' && 
+                        supabaseAnonKey !== 'undefined' &&
+                        supabaseUrl.startsWith('http');
+
+    if (hasRealKeys) {
+        try {
+            const { createClient } = await import('@supabase/supabase-js');
+            const realClient = createClient(supabaseUrl, supabaseAnonKey);
+            
+            // Força a tipagem e define que NÃO é um stub
+            const typedClient = realClient as IAppSupabaseClient;
+            typedClient.isStub = false;
+            
+            console.log("✅ Supabase: Cliente real inicializado.");
+            return typedClient;
+        } catch (err) {
+            console.error("❌ Erro ao inicializar cliente real do Supabase:", err);
+        }
     }
+
+    // Fallback para o Mock caso não existam chaves ou ocorra erro
+    console.warn("⚠️ Supabase: Chaves não encontradas ou inválidas. Ativando modo MOCK (Simulação).");
+    const { supabaseMockClient } = await import('./supabaseMock');
+    return supabaseMockClient;
 };
 
-// Exporta a promessa que resolverá para o cliente inicializado.
-// O resto da aplicação irá aguardar (await) esta promessa.
+// Exporta a promessa única para ser aguardada pela aplicação
 export const supabasePromise = createDynamicClient();

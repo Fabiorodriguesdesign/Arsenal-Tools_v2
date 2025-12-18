@@ -28,7 +28,7 @@ const DashboardPage = lazy(() => import('./components/DashboardPage'));
 const App: React.FC = () => {
   const { siteContent } = useSiteContent();
   const { isLoggedIn, isLoading: isAuthLoading } = useAuth();
-  const { openModal } = useModal();
+  const { openModal, modalState } = useModal();
   
   // Custom Hooks
   const { currentHash } = useRoute();
@@ -37,10 +37,10 @@ const App: React.FC = () => {
 
   // Gerenciamento de Acesso Admin e Histórico
   useEffect(() => {
-    // Admin Check: Se tentar entrar em /admindash sem estar logado, abre o login
-    if (currentHash.startsWith('#/admindash') && !isAuthLoading && !isLoggedIn) {
+    // Admin Check: Se tentar entrar em /admindash sem estar logado
+    // Adicionamos uma trava para não tentar abrir se o modal já estiver ativo (evita loop/piscar)
+    if (currentHash.startsWith('#/admindash') && !isAuthLoading && !isLoggedIn && modalState.type !== 'adminLogin') {
         openModal('adminLogin');
-        return;
     }
 
     // Histórico Tracker
@@ -59,7 +59,7 @@ const App: React.FC = () => {
          addRecentTool('shopee-finder', 'shopee-finder');
     }
 
-  }, [currentHash, isAuthLoading, isLoggedIn, addRecentTool, openModal]);
+  }, [currentHash, isAuthLoading, isLoggedIn, addRecentTool, openModal, modalState.type]);
 
   // Roteamento
   const renderContent = () => {
