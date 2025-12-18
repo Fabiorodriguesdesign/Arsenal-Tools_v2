@@ -1,0 +1,100 @@
+
+export default {
+    title: 'Professional Resume Builder',
+    newResume: 'New Resume',
+    steps: {
+        personal: 'Personal Info',
+        experience: 'Experience',
+        education: 'Education',
+        skills: 'Skills',
+        customize: 'Customize',
+        preview: 'Preview & Download',
+    },
+    personal: {
+        fullName: 'Full Name',
+        jobTitle: 'Job Title / Professional Headline',
+        email: 'Email',
+        phone: 'Phone',
+        location: 'Location (City, State)',
+        linkedin: 'LinkedIn (Optional)',
+        website: 'Website / Portfolio (Optional)',
+        summary: 'Professional Summary',
+        summaryPlaceholder: 'Write a brief summary about your career and goals...',
+        photo: {
+            label: 'Profile Photo',
+            upload: 'Upload Photo',
+            change: 'Change Photo',
+            remove: 'Remove',
+            helper: 'Recommended: JPG or PNG, max 2MB.',
+        }
+    },
+    preview: {
+        options: 'Customization Options',
+        primaryColor: 'Primary Color',
+        fullscreen: 'Fullscreen',
+        template: {
+            label: 'Template',
+            modern: 'Modern',
+            classic: 'Classic',
+            tech: 'Tech / Dev',
+        },
+        language: {
+            label: 'Document Language',
+            note: '* This option translates only the labels (e.g., "Experience", "Contact") of the generated PDF. Your typed content will not be translated.',
+        },
+        lang: {
+            pt: 'Portuguese',
+            en: 'English',
+            es: 'Spanish',
+        },
+        contact: 'Contact',
+    },
+    experience: {
+        title: 'Professional Experience',
+        company: 'Company',
+        position: 'Job Title',
+        startDate: 'Start Date',
+        endDate: 'End Date',
+        current: 'Currently in this role',
+        description: 'Description',
+        add: 'Add Experience',
+        remove: 'Remove',
+        empty: 'No experience added. Click the button below to start.',
+    },
+    education: {
+        title: 'Education',
+        institution: 'Institution',
+        degree: 'Degree / Diploma',
+        field: 'Field of Study',
+        startDate: 'Start Date',
+        endDate: 'End Date',
+        current: 'Currently studying',
+        add: 'Add Education',
+        remove: 'Remove',
+        empty: 'No education added. Click the button below to start.',
+    },
+    skills: {
+        title: 'Technical Skills',
+        input: {
+            placeholder: 'e.g., Photoshop, React, Excel (Press Enter)',
+        },
+        add: 'Add',
+        empty: 'Add your main technical or soft skills.',
+    },
+    languages: {
+        title: 'Languages',
+        input: {
+            placeholder: 'e.g., English, Spanish',
+        },
+        level: {
+            label: 'Level',
+            basic: 'Basic',
+            intermediate: 'Intermediate',
+            advanced: 'Advanced',
+            fluent: 'Fluent',
+            native: 'Native',
+        },
+        add: 'Add Language',
+        empty: 'No languages added.',
+    }
+};

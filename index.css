@@ -1,0 +1,148 @@
+
+/* --- Theme Definitions --- */
+
+:root {
+  /* =========================================
+     DEFAULT THEME (Landing Page & Kit Freelancer)
+     ========================================= */
+  
+  /* Brand Colors */
+  --color-primary: #e52920;
+  --color-primary-dark: #c91a1a;
+  --color-secondary: #10b981;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-success: #10b981;
+
+  /* New Accent Palette (Phase 56) */
+  --color-accent-blue: #4338ca;
+  --color-accent-purple: #9333ea;
+  --gradient-accent: linear-gradient(to right, var(--color-accent-blue), var(--color-accent-purple));
+
+  /* Light Theme Tokens (Phase 56 Update) */
+  --color-light-bg: #f8fafc; /* slate-50 */
+  --color-light-card: #ffffff;
+  --color-light-text: #09090b; /* zinc-950 */
+  --color-light-muted: #52525b; /* zinc-600 */
+  --color-light-border: #d4d4d8; /* zinc-300 */
+  --color-light-input: #ffffff;
+  --color-light-accent: #ffe8e6;
+  --color-light-accent-text: #b30a00;
+
+  /* Dark Theme Tokens */
+  --color-dark-bg: #18181b;
+  --color-dark-card: #27272a;
+  --color-dark-text: #f4f4f5;
+  --color-dark-muted: #a1a1aa;
+  --color-dark-border: #3f3f46;
+  --color-dark-input: #3f3f46;
+  --color-dark-accent: #4d0400;
+  --color-dark-accent-text: #ff8780;
+}
+
+/* =========================================
+   GLOBAL STYLES
+   ========================================= */
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-light-bg);
+  color: var(--color-text-main);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+html.dark body {
+  background-color: #0a0a0a;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 25px 25px;
+}
+
+.animated-gradient-text {
+  background: linear-gradient(90deg, #e52920, #ff7300, #e52920);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-animation 5s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.animate-slide-in-up {
+  animation: slideInUp 0.5s ease-out forwards;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+.animate-pulse-soft {
+  animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Utilities */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a3a3a3;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #404040;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #525252;
+}
+
+::selection {
+  background-color: rgba(255, 14, 0, 0.2);
+  color: inherit;
+}

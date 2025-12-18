@@ -1,0 +1,26 @@
+export default {
+    title: 'Gerador de Recibo',
+    newReceipt: 'Novo Recibo',
+    payer: 'Dados do Pagador',
+    receiver: 'Dados do Recebedor (Você)',
+    details: 'Detalhes do Pagamento',
+    name: 'Nome / Razão Social',
+    document: 'CPF / CNPJ',
+    value: 'Valor (R$)',
+    date: 'Data',
+    city: 'Cidade',
+    service: 'Referente a',
+    servicePlaceholder: 'Ex: Serviços de desenvolvimento web...',
+    preview: 'Visualização',
+    template: {
+        receipt: 'RECIBO DE PAGAMENTO',
+        value: 'VALOR',
+        receivedFrom: 'Recebi(emos) de',
+        theAmount: 'a quantia de',
+        regarding: 'referente a',
+        dateSignature: 'e, para clareza, firmo(amos) o presente.',
+        signature: 'Assinatura',
+        payerCopy: 'Via do Pagador',
+        receiverCopy: 'Via do Recebedor',
+    }
+};

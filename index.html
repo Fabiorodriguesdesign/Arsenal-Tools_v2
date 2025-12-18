@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%3crect width='100' height='100' rx='20' fill='%23e52920'/%3e%3ctext x='50%25' y='50%25' dy='.1em' dominant-baseline='middle' text-anchor='middle' font-family='Inter, sans-serif' font-weight='800' font-size='60' fill='white'%3eF%3c/text%3e%3c/svg%3e" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arsenal Tools</title>
+    <link rel="canonical" href="https://arsenal-tools.com/" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Arsenal Tools - Ferramentas Freemium e Premium para otimizar seu fluxo de trabalho e impulsionar seus resultados." />
+    <meta name="keywords" content="ferramentas digitais, produtividade, freemium, premium, design, marketing, automação" />
+    <meta name="author" content="Fabio Rodrigues" />
+    <meta name="theme-color" content="#e52920" />
+
+    <!-- Open Graph Meta Tags (for Facebook, WhatsApp, etc.) -->
+    <meta property="og:site_name" content="Arsenal Tools" />
+    <meta property="og:title" content="Arsenal Tools" />
+    <meta property="og:description" content="Soluções Freemium e Premium para otimizar seu fluxo de trabalho e impulsionar seus resultados." />
+    <meta property="og:image" content="https://i.imgur.com/MaoShGg.jpeg" />
+    <meta property="og:url" content="https://arsenal-tools.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Arsenal Tools" />
+    <meta name="twitter:description" content="Soluções Freemium e Premium para otimizar seu fluxo de trabalho e impulsionar seus resultados." />
+    <meta name="twitter:image" content="https://i.imgur.com/MaoShGg.jpeg" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "Arsenal Tools",
+          "url": "https://arsenal-tools.com/",
+          "logo": "https://i.imgur.com/MaoShGg.jpeg",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "contato@arsenal-tools.com"
+          },
+          "sameAs": [
+            "https://www.instagram.com/fabiorodriguesdsgn/",
+            "https://www.instagram.com/fabiodicastop/"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "name": "Arsenal Tools",
+          "url": "https://arsenal-tools.com/",
+          "description": "Soluções Freemium e Premium para otimizar seu fluxo de trabalho e impulsionar seus resultados.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Arsenal Tools"
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/imagetracerjs@1.2.6/imagetracer_v1.2.6.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            backgroundImage: {
+              'gradient-accent': 'var(--gradient-accent)',
+            },
+            colors: {
+              // Dynamic CSS Variables for Multi-Theme support
+              primary: 'var(--color-primary)',
+              'primary-dark': 'var(--color-primary-dark)',
+              
+              secondary: 'var(--color-secondary)',
+              danger: 'var(--color-danger)',
+              warning: 'var(--color-warning)',
+              success: 'var(--color-success)',
+              
+              'accent-blue': 'var(--color-accent-blue)',
+              'accent-purple': 'var(--color-accent-purple)',
+
+              // Specific UI Tokens
+              'light-bg': 'var(--color-light-bg)',
+              'light-card': 'var(--color-light-card)',
+              'light-text': 'var(--color-light-text)',
+              'light-muted': 'var(--color-light-muted)',
+              'light-border': 'var(--color-light-border)',
+              'light-input': 'var(--color-light-input)',
+              'light-accent': 'var(--color-light-accent)',
+              'light-accent-text': 'var(--color-light-accent-text)',
+              
+              'dark-bg': 'var(--color-dark-bg)',
+              'dark-card': 'var(--color-dark-card)',
+              'dark-text': 'var(--color-dark-text)',
+              'dark-muted': 'var(--color-dark-muted)',
+              'dark-border': 'var(--color-dark-border)',
+              'dark-input': 'var(--color-dark-input)',
+              'dark-accent': 'var(--color-dark-accent)',
+              'dark-accent-text': 'var(--color-dark-accent-text)',
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Import Map -->
+    <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.1.1/client",
+    "@supabase/supabase-js": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.44.4/dist/esm/supabase.min.js",
+    "path": "https://aistudiocdn.com/path@^0.12.7",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "vite": "https://aistudiocdn.com/vite@^7.2.6",
+    "vitest/": "https://aistudiocdn.com/vitest@^4.0.15/",
+    "vitest": "https://aistudiocdn.com/vitest@^4.0.15",
+    "jspdf": "https://aistudiocdn.com/jspdf@^3.0.4",
+    "url": "https://aistudiocdn.com/url@^0.11.4",
+    "@testing-library/react": "https://aistudiocdn.com/@testing-library/react@^16.3.0",
+    "@testing-library/jest-dom": "https://aistudiocdn.com/@testing-library/jest-dom@^6.9.1",
+    "qrcode": "https://aistudiocdn.com/qrcode@^1.5.4",
+    "ag-psd": "https://aistudiocdn.com/ag-psd@^29.0.0"
+  }
+}
+</script>
+    
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

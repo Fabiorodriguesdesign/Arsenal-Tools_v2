@@ -1,0 +1,100 @@
+
+export default {
+    title: 'Construtor de Currículo Profissional',
+    newResume: 'Novo Currículo',
+    steps: {
+        personal: 'Dados Pessoais',
+        experience: 'Experiência',
+        education: 'Educação',
+        skills: 'Habilidades',
+        customize: 'Personalizar',
+        preview: 'Visualizar e Baixar',
+    },
+    personal: {
+        fullName: 'Nome Completo',
+        jobTitle: 'Cargo / Título Profissional',
+        email: 'E-mail',
+        phone: 'Telefone',
+        location: 'Localização (Cidade, Estado)',
+        linkedin: 'LinkedIn (Opcional)',
+        website: 'Site / Portfólio (Opcional)',
+        summary: 'Resumo Profissional',
+        summaryPlaceholder: 'Escreva um breve resumo sobre sua carreira e objetivos...',
+        photo: {
+            label: 'Foto de Perfil',
+            upload: 'Carregar Foto',
+            change: 'Alterar Foto',
+            remove: 'Remover',
+            helper: 'Recomendado: JPG ou PNG, máx 2MB.',
+        }
+    },
+    preview: {
+        options: 'Opções de Personalização',
+        primaryColor: 'Cor Principal',
+        fullscreen: 'Tela Cheia',
+        template: {
+            label: 'Modelo',
+            modern: 'Moderno',
+            classic: 'Clássico',
+            tech: 'Tech / Dev',
+        },
+        language: {
+            label: 'Idioma do Documento',
+            note: '* Esta opção traduz apenas os rótulos (ex: "Experiência", "Contato") do PDF gerado. O conteúdo digitado por você não será traduzido.',
+        },
+        lang: {
+            pt: 'Português',
+            en: 'Inglês',
+            es: 'Espanhol',
+        },
+        contact: 'Contato',
+    },
+    experience: {
+        title: 'Experiência Profissional',
+        company: 'Empresa',
+        position: 'Cargo',
+        startDate: 'Data de Início',
+        endDate: 'Data de Término',
+        current: 'Atualmente neste cargo',
+        description: 'Descrição das atividades',
+        add: 'Adicionar Experiência',
+        remove: 'Remover',
+        empty: 'Nenhuma experiência adicionada. Clique no botão abaixo para começar.',
+    },
+    education: {
+        title: 'Formação Acadêmica',
+        institution: 'Instituição de Ensino',
+        degree: 'Grau / Diploma',
+        field: 'Área de Estudo',
+        startDate: 'Data de Início',
+        endDate: 'Data de Término',
+        current: 'Atualmente cursando',
+        add: 'Adicionar Formação',
+        remove: 'Remover',
+        empty: 'Nenhuma formação adicionada. Clique no botão abaixo para começar.',
+    },
+    skills: {
+        title: 'Habilidades Técnicas',
+        input: {
+            placeholder: 'Ex: Photoshop, React, Excel (Pressione Enter)',
+        },
+        add: 'Adicionar',
+        empty: 'Adicione suas principais habilidades técnicas ou comportamentais (Soft Skills).',
+    },
+    languages: {
+        title: 'Idiomas',
+        input: {
+            placeholder: 'Ex: Inglês, Espanhol',
+        },
+        level: {
+            label: 'Nível',
+            basic: 'Básico',
+            intermediate: 'Intermediário',
+            advanced: 'Avançado',
+            fluent: 'Fluente',
+            native: 'Nativo',
+        },
+        add: 'Adicionar Idioma',
+        empty: 'Nenhum idioma adicionado.',
+    }
+};

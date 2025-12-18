@@ -1,0 +1,26 @@
+export default {
+    title: 'Receipt Generator',
+    newReceipt: 'New Receipt',
+    payer: 'Payer Details',
+    receiver: 'Receiver Details (You)',
+    details: 'Payment Details',
+    name: 'Name / Company Name',
+    document: 'Document ID',
+    value: 'Value ($)',
+    date: 'Date',
+    city: 'City',
+    service: 'Regarding',
+    servicePlaceholder: 'e.g., Web development services...',
+    preview: 'Preview',
+    template: {
+        receipt: 'PAYMENT RECEIPT',
+        value: 'VALUE',
+        receivedFrom: 'Received from',
+        theAmount: 'the amount of',
+        regarding: 'regarding',
+        dateSignature: 'and, for clarity, I sign this document.',
+        signature: 'Signature',
+        payerCopy: 'Payer Copy',
+        receiverCopy: 'Receiver Copy',
+    }
+};

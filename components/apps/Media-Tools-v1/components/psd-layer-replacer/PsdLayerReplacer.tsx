@@ -1,0 +1,1 @@
+// excluir - ferramenta desativada por inconsistência técnica
